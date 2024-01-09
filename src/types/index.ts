@@ -14,3 +14,8 @@ export interface IScore {
   questionNo: number;
   answeredCorrectly: boolean;
 }
+
+export interface ICourse {
+  name: string;
+  subjects: number;
+}

@@ -42,7 +42,7 @@ export default function Result() {
       </div>
 
       <button
-        className="rounded-md px-6 py-2 ring-2 ring-blue-400 duration-300 hover:bg-blue-300 hover:transition-transform"
+        className="ring-primary hover:bg-primary rounded-md px-6 py-2 ring-2 duration-300 hover:transition-transform"
         onClick={() => navigate("/quiz")}
       >
         {scores.length ? "Restart Quiz" : "Start quiz"}
