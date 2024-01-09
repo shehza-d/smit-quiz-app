@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* theme color #8DC63F */
+
+:root {
+  --primary-color: #8dc63f;
+  --secondary-color: #fff;
+}
+
+/* remove */
+.bdr {
+  border: 2px solid red;
+}
+.bdr2 {
+  border: 2px solid green;
+}
+.bdr3 {
+  border: 2px solid blue;
+}
+/* remove */

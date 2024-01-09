@@ -1,0 +1,10 @@
+
+color-shadow-font-title left
+
+solution of 404 page not found while deploying with react router dom
+
+```bash
+npm run build && cd build && cp index.html 200.html && surge
+```
+
+covert context api => reduxTK
