@@ -41,7 +41,7 @@ export const getRating = (rating: IDifficulty) =>
 // was totalAttemptedQuestions(state) so i added optional params of totalQuestions
 export const getPercentage = (
   obtained: number,
-  total: number = totalQuestions,
+  total: number = totalQuestions
 ) => {
   const result = Math.round((obtained / total) * 100);
   return result || 0; // 0 to avoid NaN at first question

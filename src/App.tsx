@@ -2,7 +2,7 @@ import AppRouter from "./routes/AppRouter";
 
 export default function App() {
   return (
-    <main className="p-4 max-w-7xl mx-auto">
+    <main className="mx-auto max-w-7xl p-4">
       <AppRouter />
     </main>
   );

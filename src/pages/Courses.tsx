@@ -16,7 +16,7 @@ export default function Courses() {
 
   return (
     <section>
-      <h2 className="text-primary  text-3xl ml:text-5xl">Hi, {name} 👋</h2>
+      <h2 className="text-3xl text-primary ml:text-5xl">Hi, {name} 👋</h2>
       <p className="my-4 text-lg">Select your course below to take a quiz.</p>
       <div className="grid grid-cols-1 gap-4 min-[550px]:grid-cols-2 md:grid-cols-3 ">
         {courses.map((course) => (

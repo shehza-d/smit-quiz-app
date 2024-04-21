@@ -16,7 +16,7 @@ export default function useScoreBarPercentage() {
   const minPercentage = getPercentage(totalCorrectAnswer);
   const totalCorrectPercentageUpTillNow = getPercentage(
     totalCorrectAnswer,
-    totalAttemptedQuestions,
+    totalAttemptedQuestions
   );
 
   return { minPercentage, totalCorrectPercentageUpTillNow, maxPercentage };

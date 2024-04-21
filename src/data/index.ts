@@ -7,7 +7,7 @@ export const totalQuestions = data.length;
 const cleanedData = data.map((item) => {
   const correct_answer = decodeURIComponent(item.correct_answer);
   const incorrect_answers = item.incorrect_answers.map((i) =>
-    decodeURIComponent(i),
+    decodeURIComponent(i)
   );
   return {
     category: decodeURIComponent(item.category),
