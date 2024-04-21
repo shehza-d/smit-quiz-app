@@ -19,3 +19,11 @@ export interface ICourse {
   name: string;
   subjects: number;
 }
+
+export interface IMcq {
+  id?: string;
+  question: string;
+  codeBlock?: string;
+  correct_answer: string;
+  incorrect_answers: string[];
+}

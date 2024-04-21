@@ -1,8 +1,10 @@
 import { useState, useContext } from "react";
 import axios from "axios";
+import Button from "../ui/Button";
 // import { GlobalContext } from "../../context/context";
 // import useDoc from "../../hooks/useDoc";
-import Button from "../ui/Button";
+import type { Dispatch, SetStateAction } from "react";
+import { IMcq } from "../../types";
 
 const supportedLanguage = [
   "html",
@@ -18,7 +20,14 @@ const supportedLanguage = [
   "python",
 ];
 
-export default function CodeForm({ onClose }: any) {
+interface IProps {
+  setMCQs: Dispatch<SetStateAction<IMcq[]>>;
+  setShowCodeBlockFormModel: Dispatch<SetStateAction<boolean>>;
+}
+
+export default function CodeForm(Props: IProps) {
+  const { setMCQs, setShowCodeBlockFormModel } = Props;
+
   //   const { state, dispatch } = useContext(GlobalContext);
   //   const { postCode, isLoading } = useDoc();
   const [codeTitle, setCodeTitle] = useState("");
@@ -50,7 +59,7 @@ export default function CodeForm({ onClose }: any) {
       contentType: "code",
     };
     // postCode(data);
-    onClose();
+    // onClose();
   };
 
   //   const bg_c = useColorModeValue("blackAlpha.100", "whiteAlpha.100");
@@ -100,7 +109,8 @@ export default function CodeForm({ onClose }: any) {
         <div>
           <Button
             type="submit"
-            //   isLoading={isLoading}
+            // isLoading={isLoading}
+            onClick={() => setShowCodeBlockFormModel(false)}
           >
             Add Code
           </Button>

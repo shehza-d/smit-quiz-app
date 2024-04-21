@@ -1,7 +1,8 @@
+import type { Dispatch, SetStateAction } from "react";
+
 interface IProps {
   children: React.ReactNode;
-  //   showModal: boolean;
-  setShowModal: any; //Dispatch<SetStateAction<boolean>>;
+  setShowModal: Dispatch<SetStateAction<boolean>>;
 }
 
 export default function Model({ children, setShowModal }: IProps) {

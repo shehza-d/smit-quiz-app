@@ -1,11 +1,15 @@
 // New Quiz Questions will be added here
 import { useState } from "react";
 import Model from "../components/ui/Model";
-import CodeForm from "../components/utils/CodeForm";
+import CodeForm from "../components/admin/CodeForm";
 import Button from "../components/ui/Button";
+import { IMcq } from "../types";
+import McqForm from "../components/admin/McqForm";
 
 export default function Admin() {
   const [showCodeBlockFormModel, setShowCodeBlockFormModel] = useState(false);
+  const [MCQs, setMCQs] = useState<IMcq[]>([]);
+  console.log("🚀 ~ Admin ~ MCQs:", MCQs);
 
   return (
     <div>
@@ -14,56 +18,35 @@ export default function Admin() {
           // showModal={showCodeBlockFormModel}
           setShowModal={setShowCodeBlockFormModel}
         >
-          <CodeForm />
+          <CodeForm
+            setMCQs={setMCQs}
+            setShowCodeBlockFormModel={setShowCodeBlockFormModel}
+          />
         </Model>
       )}
-      <h3>Add Questions</h3>
-      <input
-        type="text"
-        placeholder="Question"
-        className={`block h-12 w-full border border-gray-400 bg-gray-100 p-3 ${
-          false //errors
-            ? "border-red-400 ring-red-500"
-            : "focus:border-primary focus:ring-primary"
-        } "mb-2 mt-1 rounded outline-none focus:ring-2 md:text-xl`}
-      />
-
-      <div className="my-8 grid grid-cols-2 gap-6">
-        <div className="flex flex-col">
-          Correct Answer
-          <input
-            type="text"
-            className="h-12 w-full rounded border border-gray-400 bg-gray-100 p-3 outline-none focus:border-primary focus:ring-2 focus:ring-primary md:text-xl"
-          />
-        </div>
-        <div className="flex flex-col">
-          Wrong Answer
-          <input
-            type="text"
-            className="h-12 w-full rounded border border-gray-400 bg-gray-100 p-3 outline-none focus:border-primary focus:ring-2 focus:ring-primary md:text-xl"
-          />
-        </div>
-        <div className="flex flex-col">
-          Wrong Answer
-          <input
-            type="text"
-            className="h-12 w-full rounded border border-gray-400 bg-gray-100 p-3 outline-none focus:border-primary focus:ring-2 focus:ring-primary md:text-xl"
-          />
-        </div>
-        <div className="flex flex-col">
-          Wrong Answer
-          <input
-            type="text"
-            className="h-12 w-full rounded border border-gray-400 bg-gray-100 p-3 outline-none focus:border-primary focus:ring-2 focus:ring-primary md:text-xl"
-          />
-        </div>
-      </div>
       <Button
         onClick={() => setShowCodeBlockFormModel(!showCodeBlockFormModel)}
-        className="button"
+        className="bg-slate-500 text-slate-100"
       >
         Add Code Block
       </Button>
+
+      <h3>Add Questions</h3>
+      <McqForm setMCQs={setMCQs} />
+
+      <div className="list">
+        {MCQs?.map((mcq) => (
+          <div key={mcq.id}>
+            Q. {mcq.question} <br />
+            Options 1. {mcq.correct_answer} <br />
+            {mcq.incorrect_answers?.map((item, i) => (
+              <>
+                Options {i + 2}. {item} <br />
+              </>
+            ))}
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
