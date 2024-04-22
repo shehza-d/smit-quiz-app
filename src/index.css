@@ -15,12 +15,23 @@
   --secondary-color: #fff;
 }
 
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.button {
+  @apply center rounded bg-primary px-3 py-1 font-medium uppercase text-white shadow-md drop-shadow hover:shadow-xl hover:drop-shadow-xl;
+}
 /* remove */
 .bdr {
   border: 2px solid red;
 }
 .bdr2 {
   border: 2px solid green;
+}
+.bdr4 {
+  border: 2px solid yellow;
 }
 .bdr3 {
   border: 2px solid blue;

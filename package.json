@@ -2,6 +2,9 @@
   "name": "my",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "20.x"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -11,11 +14,17 @@
     "eject": "react-scripts eject"
   },
   "dependencies": {
+    "@hookform/resolvers": "^3.3.4",
+    "axios": "^1.6.8",
     "react": "^18.2.0",
+    "react-code-block": "^1.0.0",
     "react-dom": "^18.2.0",
+    "react-hook-form": "^7.51.3",
     "react-router-dom": "^6.15.0",
     "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
+    "tailwind-merge": "^2.3.0",
+    "web-vitals": "^2.1.4",
+    "zod": "^3.23.0"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.17.0",

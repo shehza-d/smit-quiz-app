@@ -1,5 +1,5 @@
 import { Routes, Route, Navigate } from "react-router-dom";
-import { Quiz, Welcome, Result, Courses, Login } from "../pages";
+import { Quiz, Welcome, Result, Courses, Login, Admin } from "../pages";
 
 export default function AppRouter() {
   let auth = true;
@@ -10,6 +10,8 @@ export default function AppRouter() {
       <Route path="/courses" element={<Courses />} />
       <Route path="/quiz" element={<Quiz />} />
       <Route path="/result" element={<Result />} />
+      <Route path="/admin" element={<Admin />} />
+
       <Route path="*" element={<Navigate to="/welcome" replace={true} />} />
     </Routes>
   ) : (
