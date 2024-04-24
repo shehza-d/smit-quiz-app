@@ -40,7 +40,9 @@ export default function McqForm(Props: IProps) {
 
   console.log(errors ? errors : "");
   return (
-    <form onSubmit={handleSubmit(onFormSubmit)}>
+    <form onSubmit={handleSubmit(onFormSubmit)}
+    className="w-full"
+    >
       <input
         id="question"
         {...register("question")}
