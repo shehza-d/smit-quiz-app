@@ -7,13 +7,13 @@ import type { Dispatch, SetStateAction } from "react";
 import { IMcq } from "../../types";
 
 const supportedLanguage = [
+  "txt",
   "html",
   "css",
   "javascript",
   "js",
   "jsx",
   "json",
-  "text",
   "typescript",
   "ts",
   "tsx",
@@ -67,7 +67,9 @@ export default function CodeForm(Props: IProps) {
 
   return (
     <>
-      <form onSubmit={handleData}>
+      <form onSubmit={handleData}
+        className="flex flex-col gap-4"
+      >
         {/* <input
           // bg={useColorModeValue("blackAlpha.100", "whiteAlpha.100")}
           // border={0}
@@ -83,17 +85,18 @@ export default function CodeForm(Props: IProps) {
           value={codeBlock}
           onChange={checkCode}
           placeholder="Insert Your Code Here"
-          className="w-full border-2"
-          // my={1}
-          // border={0}
-          // bg={bg_c}
-          // _focus={focus}
+          className="w-full h-40 border-2 p-4 resize-none"
+        // my={1}
+        // border={0}
+        // bg={bg_c}
+        // _focus={focus}
         />
         <select
           // bg={bg_c}
           // _focus={focus}
           // border={0}
           // my="1"
+          className="w-fit"
           placeholder="Select Syntax"
           onChange={(e) => setSelectedLang(e.target.value)}
           value={selectedLang}

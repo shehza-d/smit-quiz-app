@@ -5,6 +5,7 @@ import CodeForm from "../components/admin/CodeForm";
 import Button from "../components/ui/Button";
 import { IMcq } from "../types";
 import McqForm from "../components/admin/McqForm";
+import { FaCode } from "react-icons/fa";
 
 export default function Admin() {
   const [showCodeBlockFormModel, setShowCodeBlockFormModel] = useState(false);
@@ -12,7 +13,7 @@ export default function Admin() {
   console.log("🚀 ~ Admin ~ MCQs:", MCQs);
 
   return (
-    <div>
+    <div className="flex flex-col items-start gap-4 p-4 w-full">
       {showCodeBlockFormModel && (
         <Model
           // showModal={showCodeBlockFormModel}
@@ -26,12 +27,12 @@ export default function Admin() {
       )}
       <Button
         onClick={() => setShowCodeBlockFormModel(!showCodeBlockFormModel)}
-        className="bg-slate-500 text-slate-100"
+        className="bg-slate-500 text-slate-100 flex justify-center items-center gap-2"
       >
-        Add Code Block
+        <FaCode className="text-lg" /><p>Add Code Block</p>
       </Button>
 
-      <h3>Add Questions</h3>
+      <h3 className="mt-4">Add Questions</h3>
       <McqForm setMCQs={setMCQs} />
 
       <div className="list">
